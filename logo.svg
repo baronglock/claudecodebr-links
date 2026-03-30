@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+
+  <!-- Fundo preto -->
+  <rect width="800" height="800" fill="#000000"/>
+
+  <!-- BONEQUINHO -->
+  <g fill="#C8704A">
+    <rect x="260" y="200" width="280" height="40"/>
+    <rect x="260" y="240" width="280" height="160"/>
+    <rect x="220" y="290" width="40" height="40"/>
+    <rect x="540" y="290" width="40" height="40"/>
+    <rect x="280" y="400" width="28" height="32"/>
+    <rect x="320" y="400" width="28" height="32"/>
+    <rect x="452" y="400" width="28" height="32"/>
+    <rect x="492" y="400" width="28" height="32"/>
+  </g>
+
+  <!-- Olhos (mais afastados, base alinhada com topo do braço y=290) -->
+  <rect x="310" y="248" width="16" height="42" fill="#000000"/>
+  <rect x="474" y="248" width="16" height="42" fill="#000000"/>
+
+  <!-- Pintura de rosto brasileira (verde e amarelo no rosto) -->
+  <!-- Esquerdo -->
+  <rect x="302" y="310" width="32" height="7" fill="#2E9B3E"/>
+  <rect x="302" y="317" width="32" height="7" fill="#F4D03F"/>
+  <!-- Direito -->
+  <rect x="466" y="310" width="32" height="7" fill="#2E9B3E"/>
+  <rect x="466" y="317" width="32" height="7" fill="#F4D03F"/>
+
+  <!-- ========== CLAUDE CODE (pixel font, p=8, centered) ========== -->
+
+  <!-- C (x=212) -->
+  <g fill="#C8704A">
+    <rect x="212" y="500" width="24" height="8"/>
+    <rect x="212" y="508" width="8" height="24"/>
+    <rect x="212" y="532" width="24" height="8"/>
+  </g>
+
+  <!-- L (x=244) -->
+  <g fill="#C8704A">
+    <rect x="244" y="500" width="8" height="40"/>
+    <rect x="252" y="532" width="16" height="8"/>
+  </g>
+
+  <!-- A (x=276) -->
+  <g fill="#C8704A">
+    <rect x="284" y="500" width="16" height="8"/>
+    <rect x="276" y="508" width="8" height="32"/>
+    <rect x="300" y="508" width="8" height="32"/>
+    <rect x="276" y="516" width="32" height="8"/>
+  </g>
+
+  <!-- U (x=316) -->
+  <g fill="#C8704A">
+    <rect x="316" y="500" width="8" height="32"/>
+    <rect x="340" y="500" width="8" height="32"/>
+    <rect x="324" y="532" width="16" height="8"/>
+  </g>
+
+  <!-- D (x=356) -->
+  <g fill="#C8704A">
+    <rect x="356" y="500" width="24" height="8"/>
+    <rect x="356" y="508" width="8" height="24"/>
+    <rect x="380" y="508" width="8" height="24"/>
+    <rect x="356" y="532" width="24" height="8"/>
+  </g>
+
+  <!-- E (x=396) -->
+  <g fill="#C8704A">
+    <rect x="396" y="500" width="32" height="8"/>
+    <rect x="396" y="508" width="8" height="24"/>
+    <rect x="396" y="516" width="24" height="8"/>
+    <rect x="396" y="532" width="32" height="8"/>
+  </g>
+
+  <!-- (espaco 16px) -->
+
+  <!-- C (x=444) -->
+  <g fill="#C8704A">
+    <rect x="444" y="500" width="24" height="8"/>
+    <rect x="444" y="508" width="8" height="24"/>
+    <rect x="444" y="532" width="24" height="8"/>
+  </g>
+
+  <!-- O (x=476) -->
+  <g fill="#C8704A">
+    <rect x="484" y="500" width="16" height="8"/>
+    <rect x="476" y="508" width="8" height="24"/>
+    <rect x="500" y="508" width="8" height="24"/>
+    <rect x="484" y="532" width="16" height="8"/>
+  </g>
+
+  <!-- D (x=516) -->
+  <g fill="#C8704A">
+    <rect x="516" y="500" width="24" height="8"/>
+    <rect x="516" y="508" width="8" height="24"/>
+    <rect x="540" y="508" width="8" height="24"/>
+    <rect x="516" y="532" width="24" height="8"/>
+  </g>
+
+  <!-- E (x=556) -->
+  <g fill="#C8704A">
+    <rect x="556" y="500" width="32" height="8"/>
+    <rect x="556" y="508" width="8" height="24"/>
+    <rect x="556" y="516" width="24" height="8"/>
+    <rect x="556" y="532" width="32" height="8"/>
+  </g>
+
+  <!-- ========== BR (pixel font, verde, centered abaixo) ========== -->
+
+  <!-- B (x=364) -->
+  <g fill="#2E9B3E">
+    <rect x="364" y="555" width="24" height="8"/>
+    <rect x="364" y="563" width="8" height="8"/>
+    <rect x="388" y="563" width="8" height="8"/>
+    <rect x="364" y="571" width="24" height="8"/>
+    <rect x="364" y="579" width="8" height="8"/>
+    <rect x="388" y="579" width="8" height="8"/>
+    <rect x="364" y="587" width="24" height="8"/>
+  </g>
+
+  <!-- R (x=404) -->
+  <g fill="#2E9B3E">
+    <rect x="404" y="555" width="24" height="8"/>
+    <rect x="404" y="563" width="8" height="8"/>
+    <rect x="428" y="563" width="8" height="8"/>
+    <rect x="404" y="571" width="24" height="8"/>
+    <rect x="404" y="579" width="8" height="8"/>
+    <rect x="420" y="579" width="8" height="8"/>
+    <rect x="404" y="587" width="8" height="8"/>
+    <rect x="428" y="587" width="8" height="8"/>
+  </g>
+
+</svg>
