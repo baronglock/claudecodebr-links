@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code BR — Links</title>
+    <meta name="description" content="Automatizo empresas com IA. Claude Code todos os dias há 1 ano.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #050507;
+            --surface: #0a0a0f;
+            --surface-2: #111118;
+            --border: #1a1a24;
+            --text: #f0f0f2;
+            --text-2: #8888aa;
+            --blue: #4d8eff;
+            --green: #22c55e;
+            --glow-blue: rgba(77, 142, 255, 0.15);
+            --glow-green: rgba(34, 197, 94, 0.12);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Background grid */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background:
+                linear-gradient(rgba(77,142,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(77,142,255,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Glow orb */
+        body::after {
+            content: '';
+            position: fixed;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(77,142,255,0.08) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 420px;
+            padding: 40px 20px 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Logo */
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: 0 0 40px var(--glow-blue);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 20px;
+            padding: 1px;
+            background: linear-gradient(135deg, var(--blue), transparent 50%, var(--green));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--blue);
+            letter-spacing: -1px;
+        }
+
+        /* Name */
+        .name {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+            background: linear-gradient(135deg, #fff 0%, #ccc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .handle {
+            font-size: 14px;
+            color: var(--blue);
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .bio {
+            font-size: 13px;
+            color: var(--text-2);
+            text-align: center;
+            line-height: 1.6;
+            margin-bottom: 8px;
+            max-width: 320px;
+        }
+
+        /* Stats bar */
+        .stats {
+            display: flex;
+            gap: 24px;
+            margin: 16px 0 32px;
+            padding: 12px 24px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-val {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--text);
+        }
+
+        .stat-val.blue { color: var(--blue); }
+        .stat-val.green { color: var(--green); }
+
+        .stat-label {
+            font-size: 10px;
+            color: var(--text-2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 2px;
+        }
+
+        /* Links */
+        .links {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .link {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 20px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--glow-blue), transparent);
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+
+        .link:hover {
+            border-color: rgba(77, 142, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(77, 142, 255, 0.1);
+        }
+
+        .link:hover::before { opacity: 1; }
+
+        .link-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .link-icon.green { background: var(--glow-green); }
+        .link-icon.blue { background: var(--glow-blue); }
+        .link-icon.purple { background: rgba(139, 92, 246, 0.12); }
+        .link-icon.amber { background: rgba(251, 191, 36, 0.12); }
+
+        .link-content {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .link-title {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .link-sub {
+            font-size: 11px;
+            color: var(--text-2);
+        }
+
+        .link-arrow {
+            font-size: 18px;
+            color: var(--text-2);
+            position: relative;
+            z-index: 1;
+            transition: transform 0.25s;
+        }
+
+        .link:hover .link-arrow {
+            transform: translateX(3px);
+            color: var(--blue);
+        }
+
+        /* Featured link */
+        .link.featured {
+            border-color: rgba(34, 197, 94, 0.3);
+            background: linear-gradient(135deg, var(--surface), rgba(34, 197, 94, 0.03));
+        }
+
+        .link.featured::after {
+            content: 'GRÁTIS';
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            font-size: 9px;
+            font-weight: 800;
+            color: var(--green);
+            background: var(--glow-green);
+            padding: 3px 8px;
+            border-radius: 4px;
+            letter-spacing: 1.5px;
+            z-index: 1;
+        }
+
+        .link.featured:hover {
+            border-color: rgba(34, 197, 94, 0.5);
+            box-shadow: 0 8px 30px rgba(34, 197, 94, 0.1);
+        }
+
+        /* Coming soon */
+        .link.soon {
+            opacity: 0.6;
+            cursor: default;
+        }
+
+        .link.soon::after {
+            content: 'EM BREVE';
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            font-size: 9px;
+            font-weight: 800;
+            color: var(--text-2);
+            background: var(--surface-2);
+            padding: 3px 8px;
+            border-radius: 4px;
+            letter-spacing: 1.5px;
+            z-index: 1;
+        }
+
+        .link.soon:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: var(--border);
+        }
+
+        /* Divider */
+        .divider {
+            width: 40px;
+            height: 1px;
+            background: var(--border);
+            margin: 24px 0;
+        }
+
+        /* Social row */
+        .socials {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .social {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--text-2);
+            font-size: 18px;
+            transition: all 0.25s;
+        }
+
+        .social:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px var(--glow-blue);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 40px;
+            font-size: 11px;
+            color: var(--text-2);
+            opacity: 0.5;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* Pulse animation on green dot */
+        .pulse {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: var(--green);
+            border-radius: 50%;
+            margin-right: 6px;
+            animation: pulse 2s ease infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+            50% { opacity: 0.6; box-shadow: 0 0 0 6px rgba(34,197,94,0); }
+        }
+
+        /* Glow line */
+        .glow-line {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--blue), transparent);
+            opacity: 0.2;
+            margin: 24px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Logo -->
+    <div class="logo">
+        <span class="logo-text">CC</span>
+    </div>
+
+    <!-- Name -->
+    <div class="name">Claude Code BR</div>
+    <div class="handle">@claudecodebr</div>
+    <p class="bio">
+        Automatizo empresas com IA.<br>
+        Claude Code Max 20x · 1 ano de uso diário.<br>
+        <span class="pulse"></span>Sistemas rodando 24/7
+    </p>
+
+    <!-- Stats -->
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-val blue">Max 20x</div>
+            <div class="stat-label">Plano</div>
+        </div>
+        <div class="stat">
+            <div class="stat-val">+200M</div>
+            <div class="stat-label">Tokens</div>
+        </div>
+        <div class="stat">
+            <div class="stat-val green">1 ano</div>
+            <div class="stat-label">Uso diário</div>
+        </div>
+    </div>
+
+    <!-- Links -->
+    <div class="links">
+
+        <!-- Curso Grátis -->
+        <a href="https://baronglock.github.io/tutorial/" target="_blank" class="link featured">
+            <div class="link-icon green">📚</div>
+            <div class="link-content">
+                <div class="link-title">Curso Gratuito</div>
+                <div class="link-sub">Aprenda a construir software com IA do jeito certo</div>
+            </div>
+            <span class="link-arrow">→</span>
+        </a>
+
+        <!-- Curso Completo -->
+        <div class="link soon">
+            <div class="link-icon amber">🎓</div>
+            <div class="link-content">
+                <div class="link-title">Curso Completo Extensivo</div>
+                <div class="link-sub">Do zero ao SaaS — lançamento Abril/2026</div>
+            </div>
+        </div>
+
+        <div class="glow-line"></div>
+
+        <!-- Projetos -->
+        <a href="https://www.instagram.com/claudecodebr/" target="_blank" class="link">
+            <div class="link-icon blue">⚡</div>
+            <div class="link-content">
+                <div class="link-title">Projetos e Demonstrações</div>
+                <div class="link-sub">Automações reais construídas com Claude Code</div>
+            </div>
+            <span class="link-arrow">→</span>
+        </a>
+
+        <!-- Consultoria -->
+        <div class="link soon">
+            <div class="link-icon purple">💼</div>
+            <div class="link-content">
+                <div class="link-title">Consultoria & Automação</div>
+                <div class="link-sub">Quer automatizar sua empresa? Fale comigo</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Socials -->
+    <div class="socials">
+        <a href="https://www.instagram.com/claudecodebr/" target="_blank" class="social">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://tiktok.com/@claudecodebr" target="_blank" class="social">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.48v-7.15a8.16 8.16 0 005.58 2.2V11.3a4.85 4.85 0 01-3.77-1.84V6.69h3.77z"/></svg>
+        </a>
+        <a href="https://x.com/claudecodebr" target="_blank" class="social">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://youtube.com/@claudecodebr" target="_blank" class="social">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+    </div>
+
+    <div class="footer">
+        Claude Code BR · 2026<br>
+        Construído com Claude Code, obviamente.
+    </div>
+
+</div>
+
+</body>
+</html>
